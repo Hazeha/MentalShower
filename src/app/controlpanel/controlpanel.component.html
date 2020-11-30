@@ -1,0 +1,37 @@
+<div class="header">
+    <h1>Control Panel</h1>
+</div>
+
+<div>input</div>
+
+
+<section class="zoneContainer">
+    <mat-card class="zone card">
+        <h3>Zone</h3>
+        <div class="taken"></div>
+        <div class="taken"></div>
+        <div class="available"></div>
+        <div class="available"></div>
+        <div class="available"></div>
+        <div class="available"></div>
+    </mat-card>
+    <!--<div *ngFor="let zone of zones" class="zone">-->
+        <!--<h3>Zone</h3>-->
+        <!--<div *ngFor="let seat of seats">-->
+            <!--<div ngSwitch="id">-->
+                <!--<div *ngSwitchDefault="">-->
+                    <!--<div class="taken"></div>-->
+                <!--</div>-->
+                <!--<div *ngSwitchCase="'null', null">-->
+                    <!--<div class="available"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+    <!--</div>-->
+
+</section>
+<a routerLink="fan"><mat-card class="card">
+    <p>Fan Settings</p>
+    <fa-icon [icon]="arrow" class="arrow"></fa-icon>
+</mat-card></a>
