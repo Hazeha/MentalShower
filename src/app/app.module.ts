@@ -1,12 +1,21 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
+import {MaterialModule} from '../material/material.module';
+
+import { routing } from './app-routing';
+import {AppRoutingModule} from './app.routing';
+
+
 import { IndexComponent } from './index/index.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
-import { routing } from './app-routing';
+import { HomeComponent } from './home/home.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LearningElementComponent } from './learning-element/learning-element.component';
 
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatButtonModule } from "@angular/material/button";
@@ -33,6 +42,9 @@ import {MatSliderModule} from "@angular/material/slider";
     FanContainerComponent,
     FanBasicComponent,
     FanAdvancedComponent
+    HomeComponent,
+    PageNotFoundComponent,
+    LearningElementComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +58,8 @@ import {MatSliderModule} from "@angular/material/slider";
       MatTabsModule,
       MatFormFieldModule,
       MatSliderModule
+    MaterialModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
