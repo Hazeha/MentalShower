@@ -41,7 +41,8 @@ export class LearningElementComponent {
     if (dropData === originalData) {
       return this.ifMatched = true;
     }
-    if (dropData !== originalData && dropData.length === originalData.length) {
+
+    if ((dropData !== originalData && event.previousContainer.data.length === 0)) {
       return this.matchFail = true;
     }
   }

@@ -1,6 +1,5 @@
-<h1>Drag the UserFlow from Random list to Understand how vent k2 work</h1>
 <div cdkDropListGroup class="drag-drop-container">
-    <div class="container">
+    <div class="container-right">
         <h2>Random User Flow</h2>
 
         <div cdkDropList [cdkDropListData]="items" class="list" cdkDropListSortingDisabled
@@ -9,7 +8,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container-left">
         <h2>Correct User Flow</h2>
 
         <div cdkDropList [cdkDropListData]="basket" class="list" (cdkDropListDropped)="drop($event)">
@@ -17,7 +16,13 @@
         </div>
     </div>
     <div *ngIf="ifMatched" class="container">
-        <p>You are Good to Go.</p>
+        <p>You are Good to Go!.</p>
+        <p id="tips-list">Some helpful tips for</p>
+        <ul>
+            <li>Set the fan speed on high, except on very humid days.</li>
+            <li>When humidity is high,set the fan speed on low for more comfort.</li>
+
+        </ul>
     </div>
     <div *ngIf="matchFail" class="container">
         <p>Please Try Again</p>

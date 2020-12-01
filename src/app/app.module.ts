@@ -20,10 +20,10 @@ import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
 import { LearningElementComponent } from './learning-element/learning-element.component';
 import { LoginComponent } from './login/login.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 import { NavComponent } from './nav/nav.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SignupComponent } from './signup/signup.component';
-import { MyProfileComponent } from './my-profile/my-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
