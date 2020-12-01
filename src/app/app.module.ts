@@ -17,6 +17,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import { HttpClientModule } from '@angular/common/http';
     routing,
     FontAwesomeModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    ZXingScannerModule
     // AppRoutingModule,
   ],
   providers: [],
