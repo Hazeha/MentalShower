@@ -9,12 +9,14 @@ import { FanBasicComponent } from './fan-basic/fan-basic.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { FanAdvancedComponent } from './fan-advanced/fan-advanced.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 export const routing = RouterModule.forRoot([
     { path: '', component: IndexComponent },
     { path: 'index', component: IndexComponent },
     { path: 'cp', component: ControlpanelComponent },
     { path: 'advancesetting', component: FanAdvancedComponent },
     { path: 'login', component: LoginComponent },
+    { path: 'profile', component: MyProfileComponent },
     { path: 'login/:invalidLoginMessage', component: LoginComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'signup/:invalidLoginMessage', component: SignupComponent },

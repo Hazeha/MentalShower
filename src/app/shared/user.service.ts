@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import md5 from 'md5';
 
 @Injectable({
     providedIn: 'root',
@@ -20,7 +21,7 @@ export class LoginService {
         if (username !== '' && password !== '') {
             return this.afAuth.auth.signInWithEmailAndPassword(username, password).then(authState => {
                 this.loggedIn.next(true);
-                console.log('Success!');
+                console.log(authState);
                 this.router.navigate(['advancesetting']);
             })
                 .catch(
@@ -34,11 +35,16 @@ export class LoginService {
     logout() {
         this.loggedIn.next(false);
         this.afAuth.auth.signOut();
-        this.router.navigate(['/login']);
+        this.router.navigate(['']);
     }
-    signup(username: string, password: string) {
-        return this.afAuth.auth.createUserWithEmailAndPassword(username, password).then(
+    signup(username: string, email: string, password: string, photoUrl: string) {
+        console.log('from service', photoUrl)
+        return this.afAuth.auth.createUserWithEmailAndPassword(email, password).then(
             authState => {
+                authState.user.updateProfile({
+                    displayName: username,
+                    photoURL: photoUrl
+                });
                 console.log('signup-then', authState);
                 this.loggedIn.next(true);
                 this.router.navigate(['advancesetting']);
