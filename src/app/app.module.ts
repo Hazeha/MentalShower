@@ -16,7 +16,7 @@ import { NavComponent } from './nav/nav.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +37,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     routing,
     FontAwesomeModule,
     MaterialModule,
+    HttpClientModule
     // AppRoutingModule,
   ],
   providers: [],
