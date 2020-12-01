@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {faFan, faGraduationCap, faArrowAltCircleRight} from '@fortawesome/free-solid-svg-icons';
+import { faFan, faGraduationCap, faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
+import { LoginService } from '../shared/user.service';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-index',
@@ -11,9 +13,10 @@ export class IndexComponent implements OnInit {
   cap = faGraduationCap;
   arrow = faArrowAltCircleRight;
   personsname = 'Guest';
-  constructor() { }
+  constructor(private loginuser: LoginService, private authfire: AngularFireAuth) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.personsname = this.authfire.auth.currentUser.displayName;
   }
 
 }

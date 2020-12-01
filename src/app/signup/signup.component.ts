@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PasswordValidator } from '../passwordValidator';
 import { LoginService } from '../shared/user.service';
+import md5 from 'md5';
 
 @Component({
   selector: 'app-signup',
@@ -21,6 +22,7 @@ export class SignupComponent implements OnInit {
     private route: ActivatedRoute
   ) {
     this.form = fb.group({
+      email: ['', Validators.required],
       username: ['', Validators.required],
       password: [
         '',
@@ -36,11 +38,14 @@ export class SignupComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.invalidLoginMessage = params.invalidLoginMessage;
     });
-   }
+  }
 
   register() {
-    const result = this.loginService.signup(this.form.controls.username.value,
-      this.form.controls.password.value);
+    const photoUrl = `http://gravatar.com/avatar/${md5(
+      this.form.controls.email.value
+    )}?d=identicon`;
+    const result = this.loginService.signup(this.form.controls.username.value, this.form.controls.email.value,
+      this.form.controls.password.value, photoUrl);
     if (!result) {
       this.form.controls.password.setErrors({
         invalidLogin: true
