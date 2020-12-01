@@ -12,6 +12,7 @@ export class ControlpanelComponent implements OnInit {
     arrow = faArrowAltCircleRight;
 
   /** Properties */
+  panelOpenState = false;
   rooms: any;
   zones: any;
   currentRoom: any;

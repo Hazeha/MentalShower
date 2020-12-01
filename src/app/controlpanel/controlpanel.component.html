@@ -1,42 +1,88 @@
-<div class="header">
+<header>
     <h1>Control Panel</h1>
-</div>
+</header>
 
 <div>Check in Component</div>
 
 
 <section class="zoneContainer">
-  <mat-card>
-    <mat-form-field style="width: 280px" appearance="outline">
-      <mat-label mat-raised>Choose a Room</mat-label>
-      <mat-select matNativeControl>
-        <mat-option *ngFor="let room of rooms; index as i;" value="{{i}}" (onSelectionChange)="setRoom(i)">
-          {{room.room_ID}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Select Zone
+      </mat-panel-title>
+      <mat-panel-description>
+        Currently I am {{panelOpenState ? 'open' : 'closed'}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-card>
+      <mat-form-field style="width: 280px" appearance="outline">
+        <mat-label mat-raised>Choose a Room</mat-label>
+        <mat-select matNativeControl>
+          <mat-option *ngFor="let room of rooms; index as i;" value="{{i}}" (onSelectionChange)="setRoom(i)">
+            {{room.room_ID}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-    <mat-form-field style="width: 280px" appearance="outline">
+      <mat-form-field style="width: 280px" appearance="outline">
 
-      <mat-label>Chose Zone</mat-label>
-      <mat-label>{{ currentRoom == null ? "---" : "Select Seat" }}</mat-label>
-      <mat-select matNativeControl >
-        <mat-option *ngFor="let zone of zones index as i;" (onSelectionChange)="setZone(i)" value="{{i}}">
-          <mat-icon>chair</mat-icon>
-          {{ zone.climate_zone_ID }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-divider></mat-divider>
-    <div class="selectZone">
-      <div class="zone" *ngFor="let zone of zones index as i;" (click)="setZone(i)" value="{{i}}">
-        <mat-icon *ngFor="let chair of chairs;">chair</mat-icon>
+        <mat-label>{{ currentRoom == null ? "---" : "Select Zone" }}</mat-label>
+        <mat-select matNativeControl >
+          <mat-option *ngFor="let zone of zones index as i;" (onSelectionChange)="setZone(i)" value="{{i}}">
+            <mat-icon>view_module</mat-icon>
+            {{ zone.climate_zone_ID }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-divider></mat-divider>
+      <div class="selectZone">
+        <div class="zone" *ngFor="let zone of zones index as i;" (click)="setZone(i)" value="{{i}}">
+          <mat-icon *ngFor="let chair of chairs;">chair</mat-icon>
+        </div>
       </div>
-    </div>
-  </mat-card>
+    </mat-card>
+  </mat-expansion-panel>
 
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        QR Scan
+      </mat-panel-title>
+      <mat-panel-description>
+        Currently I am {{panelOpenState ? 'open' : 'closed'}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-card>
+      <mat-form-field style="width: 280px" appearance="outline">
+        <mat-label mat-raised>Choose a Room</mat-label>
+        <mat-select matNativeControl>
+          <mat-option *ngFor="let room of rooms; index as i;" value="{{i}}" (onSelectionChange)="setRoom(i)">
+            {{room.room_ID}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
+      <mat-form-field style="width: 280px" appearance="outline">
 
+        <mat-label>{{ currentRoom == null ? "---" : "Select Zone" }}</mat-label>
+        <mat-select matNativeControl >
+          <mat-option *ngFor="let zone of zones index as i;" (onSelectionChange)="setZone(i)" value="{{i}}">
+            <mat-icon>view_module</mat-icon>
+            {{ zone.climate_zone_ID }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-divider></mat-divider>
+      <div class="selectZone">
+        <div class="zone" *ngFor="let zone of zones index as i;" (click)="setZone(i)" value="{{i}}">
+          <mat-icon *ngFor="let chair of chairs;">chair</mat-icon>
+        </div>
+      </div>
+    </mat-card>
+  </mat-expansion-panel>
 <!--  <mat-card class="chair-selector select-chair-group config-card">-->
 <!--    <div class="chair-select" >-->
 <!--      <mat-icon class="chair-select">-->
