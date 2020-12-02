@@ -1,118 +1,17 @@
 <header>
-    <h1>Control Panel</h1>
+  <h1>Check In</h1>
+  <p>Current Room: {{currentPosition.currentRoom || '---'}} | Current Zone: {{currentPosition.currentZone || '---'}}</p>
 </header>
 <section class="zoneContainer">
-  <mat-expansion-panel
-    class="dropDowns"
-    [expanded]="selectPanelOpenState === true"
-    (opened)="selectPanelOpenState = true"
-    (closed)="selectPanelOpenState = false">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Select Zone
-      </mat-panel-title>
-      <mat-panel-description>
-        Currently I am {{selectPanelOpenState ? 'open' : 'closed'}}
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <mat-card>
-      <mat-form-field style="width: 280px" appearance="outline">
-        <mat-label mat-raised>Choose a Room</mat-label>
-        <mat-select matNativeControl>
-          <mat-option *ngFor="let room of rooms; index as i;" value="{{room.room_ID}}" (onSelectionChange)="setRoom(room.room_ID)">
-            {{room.room_ID}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+  <app-zone-select [(position)]="currentPosition">
+<!--    Component for zone selection -->
+  </app-zone-select>
 
-      <mat-form-field style="width: 280px" appearance="outline">
-
-        <mat-label>{{ currentRoom == null ? "---" : "Select Zone" }}</mat-label>
-        <mat-select matNativeControl >
-          <mat-option *ngFor="let zone of zones index as i;" (onSelectionChange)="setZone(zone.climate_zone_ID)" value="{{zone.climate_zone_ID}}">
-            <mat-icon>view_module</mat-icon>
-            {{ i }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-divider></mat-divider>
-      <div class="selectZone">
-        <div class="zone" *ngFor="let zone of zones index as i;" (click)="setZone(zone.climate_zone_ID)" value="{{zone.climate_zone_ID}}">
-          <mat-icon *ngFor="let chair of chairs;">chair</mat-icon>
-        </div>
-      </div>
-    </mat-card>
-  </mat-expansion-panel>
-
-  <mat-expansion-panel
-    class="dropDowns"
-    (opened)="qrPanelOpenState = true"
-    (closed)="qrPanelOpenState = false">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        QR Scan
-      </mat-panel-title>
-      <mat-panel-description>
-        Currently I am {{qrPanelOpenState ? 'open' : 'closed'}}
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <mat-card>
-      <p>Qr Scanner</p>
-      <zxing-scanner></zxing-scanner>
-<!--      <qr-scanner-->
-<!--        (error)="onError($event)"-->
-<!--        (capturedQr)="capturedQr($event)"-->
-<!--        [texts]="{-->
-<!--        NotSupportedHTML: 'You are using an <strong>outdated</strong> browser.',-->
-<!--        DeviceDefaultPrefix: 'Camera',-->
-<!--        StopCameraText: 'Stop Camera',-->
-<!--        OpenButtonText: 'Open QR Code File...' }">-->
-<!--      </qr-scanner>-->
-    </mat-card>
-  </mat-expansion-panel>
-
-<!--  <mat-card class="chair-selector select-chair-group config-card">-->
-<!--    <div class="chair-select" >-->
-<!--      <mat-icon class="chair-select">-->
-<!--        [ngStyle]="{-->
-<!--        'color':chairs.user_id !== null ? 'red' : 'green',-->
-<!--        'border':chairs.id === currentSeat+1 ? '3px dotted green' : 'none',-->
-<!--        'border-radius':chairs.id === currentSeat+1 ? '10px' : 'none'-->
-<!--        }"
-*ngFor="let chairs of seats; index as i;" (click)="setSeat(i)" value="{{i}}"-->
-
-<!--        chair-->
-<!--      </mat-icon>-->
-<!--    </div>-->
-<!--  </mat-card>-->
-
-
-<!--    <mat-card class="zone card">-->
-<!--        <h3>Zone</h3>-->
-<!--        <div class="taken"></div>-->
-<!--        <div class="taken"></div>-->
-<!--        <div class="available"></div>-->
-<!--        <div class="available"></div>-->
-<!--        <div class="available"></div>-->
-<!--        <div class="available"></div>-->
-<!--    </mat-card>-->
-    <!--<div *ngFor="let zone of zones" class="zone">-->
-        <!--<h3>Zone</h3>-->
-        <!--<div *ngFor="let seat of seats">-->
-            <!--<div ngSwitch="id">-->
-                <!--<div *ngSwitchDefault="">-->
-                    <!--<div class="taken"></div>-->
-                <!--</div>-->
-                <!--<div *ngSwitchCase="'null', null">-->
-                    <!--<div class="available"></div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-
-    <!--</div>-->
-
+  <app-qr>
+<!--    Component for QR scanner -->
+  </app-qr>
 </section>
-<a routerLink="fan"><mat-card class="card">
+<mat-card class="card" routerLink="fan">
     <p>Fan Settings</p>
     <fa-icon [icon]="arrow" class="arrow"></fa-icon>
-</mat-card></a>
+</mat-card>

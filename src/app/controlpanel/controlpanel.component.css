@@ -12,35 +12,7 @@ header h1{
     font-weight: bold;
 }
 .zoneContainer{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+padding: 15px;
 }
 
-.selectZone{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 15px;
-}
-.zone{
-  width: 40%;
-  border: 1px solid black;
-  border-radius: 20px;
-  margin-bottom: 25px;
-}
-.zone{
-  padding: 10px;
-  max-width: 40%;
-  display: grid;
-  grid-template-areas:
-            "hl hl hl"
-            ". . ."
-            ". . .";
-  row-gap: 5px;
-  column-gap: 5px;
-}
-.dropDowns{
-  width: 95%;
-  margin-bottom: 10px;
-}
+

@@ -12,20 +12,11 @@ export class ControlpanelComponent implements OnInit {
     arrow = faArrowAltCircleRight;
 
   /** Properties */
-  selectPanelOpenState = false;
-  qrPanelOpenState = false;
-  rooms: any;
-  zones: any;
-  currentRoom: any;
-  currentZone: any;
-  chairs = [
-    {id: 1},
-    {id: 2},
-    {id: 3},
-    {id: 4},
-    {id: 5},
-    {id: 6}
-  ];
+  currentPosition = {
+    currentZone: 1,
+    currentRoom: 2
+  };
+
   /** Constructor */
   constructor(
     private checkIn: CheckInService
@@ -33,36 +24,6 @@ export class ControlpanelComponent implements OnInit {
   }
   /** OnInit */
   ngOnInit(): void {
-    this.getRooms();
   }
-  /** Methods */
-  getRooms(){
-    this.checkIn.getRooms()
-      .subscribe(
-        data => {
-          this.rooms = data;
-          console.log(this.rooms);
-        },
-        error => {
-        });
-  }
-  setRoom(id) {
-    this.currentRoom = id;
-    console.log(this.currentRoom, 'set as current room');
-    this.getZones();
-  }
-  getZones() {
-    this.checkIn.getZones(this.currentRoom)
-      .subscribe(
-        data => {
-          this.zones = data;
-          console.log(this.zones);
-        },
-        error => {
-        });
-  }
-  setZone(id) {
-    this.currentZone = id;
-    console.log(this.currentZone, 'set as current Zone');
-  }
+
 }

@@ -1,0 +1,15 @@
+<mat-expansion-panel
+  class="dropDowns"
+  (opened)="panelOpenState = true"
+  (closed)="panelOpenState = false">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      QR Scan
+    </mat-panel-title>
+    <mat-panel-description>
+      Scan QR Zone Code
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+    <p>Qr Scanner</p>
+    <zxing-scanner></zxing-scanner>
+</mat-expansion-panel>

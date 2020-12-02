@@ -18,6 +18,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { FormsModule } from '@angular/forms';
+import { ZoneSelectComponent } from './controlpanel/zone-select/zone-select.component';
+import { QrComponent } from './controlpanel/qr/qr.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +35,8 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
     HomeComponent,
     PageNotFoundComponent,
     LearningElementComponent,
+    ZoneSelectComponent,
+    QrComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +45,8 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
     FontAwesomeModule,
     MaterialModule,
     HttpClientModule,
-    ZXingScannerModule
+    ZXingScannerModule,
+    FormsModule
     // AppRoutingModule,
   ],
   providers: [],
