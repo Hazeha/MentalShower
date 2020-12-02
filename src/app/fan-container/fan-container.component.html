@@ -1,9 +1,5 @@
-<mat-tab-group>
-    <mat-tab label="Basic">
-        <app-fan-basic></app-fan-basic>
-    </mat-tab>
-    <mat-tab label="Advanced">
-        <app-fan-advanced></app-fan-advanced>
-    </mat-tab>
-</mat-tab-group>
-
+<div>
+    <button mat-button class="fan-button">Basic</button>
+    <button mat-button class="fan-button" (click) ="openDialog()">Advance</button>
+    <hr>
+</div>
