@@ -57,7 +57,7 @@ import { SignupComponent } from './signup/signup.component';
     MaterialModule,
     HttpClientModule,
     ZXingScannerModule,
-    FormsModule
+    FormsModule,
     // AppRoutingModule,
     AngularFireModule.initializeApp(environment.config),
     AngularFireAuthModule,
