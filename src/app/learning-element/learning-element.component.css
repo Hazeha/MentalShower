@@ -5,8 +5,24 @@
     display: inline-block;
     vertical-align: top;
     flex-direction: column;
-   
+
   } */
+header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  padding: 1rem 0;
+}
+header h1{
+  font-size: 2rem;
+  font-weight: bold;
+}
+header p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
   .container-right{
     flex: 20%;
     margin: 10px;
@@ -23,7 +39,7 @@
     overflow: hidden;
     display: block;
   }
-  
+
   .box {
     padding: 20px 10px;
     border-bottom: solid 1px #ccc;
@@ -36,7 +52,7 @@
     cursor: move;
     font-size: 14px;
   }
-  
+
   .cdk-drag-preview {
     box-sizing: border-box;
     border-radius: 4px;
@@ -44,19 +60,19 @@
                 0 8px 10px 1px rgba(0, 0, 0, 0.14),
                 0 3px 14px 2px rgba(0, 0, 0, 0.12);
   }
-  
+
   .cdk-drag-placeholder {
     opacity: 0;
   }
-  
+
   .cdk-drag-animating {
     transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
   }
-  
+
   .box:last-child {
     border: none;
   }
-  
+
   .list.cdk-drop-list-dragging .box:not(.cdk-drag-placeholder) {
     transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
   }
@@ -70,7 +86,7 @@
     background-color: #673ab7;
     color: white;
     width: 200px;
-    
+
 }
 h2{
   padding: 8px 0;
@@ -78,10 +94,7 @@ h2{
   border-radius: 4px;
   text-align: center;
 }
-h1{
-    text-align: center;
-    margin-top: 25px;
-}
+
 
 p{
  margin-top: 50px;

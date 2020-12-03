@@ -1,12 +1,22 @@
-:host {
-    display: flex;
-    justify-content: center;
-    margin: 100px 0px;
+/*:host {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    margin: 100px 0px;*/
+/*}*/
+header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  padding: 1rem 0;
 }
-
+header h1{
+  font-size: 2rem;
+  font-weight: bold;
+}
 .mat-form-field {
     width: 100%;
-    min-width: 300px;
 }
 
 mat-card-title,
@@ -32,8 +42,9 @@ mat-card-content {
     /* Red */
 }
 
-#logincard {
+mat-card {
     background-color: rgb(240, 245, 245);
+  margin: 15px;
 }
 
 .user-button {
