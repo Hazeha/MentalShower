@@ -1,4 +1,3 @@
-
 <div cdkDropListGroup class="drag-drop-container">
     <div class="container-right">
         <h2>Random User Flow</h2>
@@ -17,7 +16,13 @@
         </div>
     </div>
     <div *ngIf="ifMatched" class="container">
-        <p>You are Good to Go.</p>
+        <p>You are Good to Go!.</p>
+        <p id="tips-list">Some helpful tips for</p>
+        <ul>
+            <li>Set the fan speed on high, except on very humid days.</li>
+            <li>When humidity is high,set the fan speed on low for more comfort.</li>
+
+        </ul>
     </div>
     <div *ngIf="matchFail" class="container">
         <p>Please Try Again</p>

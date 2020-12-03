@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {faArrowAltCircleRight} from '@fortawesome/free-solid-svg-icons';
 
+import { CheckInService } from '../_services/check-in.service';
+
 @Component({
   selector: 'app-controlpanel',
   templateUrl: './controlpanel.component.html',
@@ -9,9 +11,18 @@ import {faArrowAltCircleRight} from '@fortawesome/free-solid-svg-icons';
 export class ControlpanelComponent implements OnInit {
     arrow = faArrowAltCircleRight;
 
-  constructor() {
-  }
+  /** Properties */
+  currentPosition = {
+    currentZone: null,
+    currentRoom: null
+  };
 
+  /** Constructor */
+  constructor(
+    private checkIn: CheckInService
+  ) {
+  }
+  /** OnInit */
   ngOnInit(): void {
   }
 

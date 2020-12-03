@@ -11,6 +11,7 @@ import { SignupComponent } from './signup/signup.component';
 import { FanAdvancedComponent } from './fan-advanced/fan-advanced.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 export const routing = RouterModule.forRoot([
+    
     { path: '', component: IndexComponent },
     { path: 'index', component: IndexComponent },
     { path: 'cp', component: ControlpanelComponent },

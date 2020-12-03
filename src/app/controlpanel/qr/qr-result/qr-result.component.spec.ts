@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ControlpanelComponent } from './controlpanel.component';
+import { QrResultComponent } from './qr-result.component';
 
-describe('ControlpanelComponent', () => {
-  let component: ControlpanelComponent;
-  let fixture: ComponentFixture<ControlpanelComponent>;
+describe('QrResultComponent', () => {
+  let component: QrResultComponent;
+  let fixture: ComponentFixture<QrResultComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ControlpanelComponent ]
+      declarations: [ QrResultComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ControlpanelComponent);
+    fixture = TestBed.createComponent(QrResultComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

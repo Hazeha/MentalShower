@@ -1,37 +1,17 @@
-<div class="header">
-    <h1>Control Panel</h1>
-</div>
-
-<div>input</div>
-
-
+<header>
+  <h1>Check In</h1>
+  <p>Current Room: {{currentPosition.currentRoom || '---'}} | Current Zone: {{currentPosition.currentZone || '---'}}</p>
+</header>
 <section class="zoneContainer">
-    <mat-card class="zone card">
-        <h3>Zone</h3>
-        <div class="taken"></div>
-        <div class="taken"></div>
-        <div class="available"></div>
-        <div class="available"></div>
-        <div class="available"></div>
-        <div class="available"></div>
-    </mat-card>
-    <!--<div *ngFor="let zone of zones" class="zone">-->
-        <!--<h3>Zone</h3>-->
-        <!--<div *ngFor="let seat of seats">-->
-            <!--<div ngSwitch="id">-->
-                <!--<div *ngSwitchDefault="">-->
-                    <!--<div class="taken"></div>-->
-                <!--</div>-->
-                <!--<div *ngSwitchCase="'null', null">-->
-                    <!--<div class="available"></div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
+  <app-zone-select [(position)]="currentPosition">
+<!--    Component for zone selection -->
+  </app-zone-select>
 
-    <!--</div>-->
-
+  <app-qr>
+<!--    Component for QR scanner -->
+  </app-qr>
 </section>
 <a routerLink="fansetting"><mat-card class="card">
     <p>Fan Settings</p>
     <fa-icon [icon]="arrow" class="arrow"></fa-icon>
-</mat-card></a>
+</mat-card>

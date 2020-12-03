@@ -23,7 +23,13 @@ import { LoginComponent } from './login/login.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { NavComponent } from './nav/nav.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { ZoneSelectComponent } from './controlpanel/zone-select/zone-select.component';
+import { QrComponent } from './controlpanel/qr/qr.component';
+
 import { SignupComponent } from './signup/signup.component';
+import { QrResultComponent } from './controlpanel/qr/qr-result/qr-result.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,10 +43,13 @@ import { SignupComponent } from './signup/signup.component';
     HomeComponent,
     PageNotFoundComponent,
     LearningElementComponent,
+    ZoneSelectComponent,
+    QrComponent,
     DialogComponent,
     LoginComponent,
     SignupComponent,
     MyProfileComponent,
+    QrResultComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +57,10 @@ import { SignupComponent } from './signup/signup.component';
     routing,
     FontAwesomeModule,
     MaterialModule,
+    HttpClientModule,
+    ZXingScannerModule,
+    FormsModule,
+    // AppRoutingModule,
     AngularFireModule.initializeApp(environment.config),
     AngularFireAuthModule,
     AngularFirestoreModule,

@@ -9,9 +9,11 @@
   } */
   .container-right{
     flex: 20%;
+    margin: 10px;
   }
   .container-left{
     flex: 20%;
+    margin: 10px;
   }
   .list {
     border: solid 1px #ccc;
@@ -80,15 +82,21 @@ h1{
     text-align: center;
     margin-top: 25px;
 }
+
 p{
  margin-top: 50px;
  margin-bottom: 100px;
  font-size: 20px;
   text-align: center;
 }
+
 .container{
   flex: 20%;
+  margin: 50px;
+ font-size: 14px;
+
 }
+
 @media (max-width: 800px) {
   .drag-drop-container {
     flex-direction: column;
