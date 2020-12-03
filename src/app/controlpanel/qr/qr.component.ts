@@ -37,6 +37,7 @@ export class QrComponent implements OnInit {
 
   onCodeResult(resultString: string) {
     this.qrResultString = resultString;
+    console.log(resultString);
   }
 
   onDeviceSelectChange(selected: string) {
@@ -65,11 +66,11 @@ export class QrComponent implements OnInit {
       hasPermission: this.hasPermission,
     };
     this.deviceCurrent = this.availableDevices[0];
-    // this._dialog.open(AppInfoDialogComponent, { data });
+    // this.dialog.open(AppInfoDialogComponent, { data });
   }
 
   onTorchCompatible(isCompatible: boolean): void {
-    this.torchAvailable$.next(isCompatible || false);
+    // this.torchAvailable$.next(isCompatible || false);
   }
 
   toggleTorch(): void {
