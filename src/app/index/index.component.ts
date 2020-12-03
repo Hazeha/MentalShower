@@ -16,7 +16,7 @@ export class IndexComponent implements OnInit {
   constructor(private loginuser: LoginService, private authfire: AngularFireAuth) { }
 
   ngOnInit() {
-//    this.personsname = this.authfire.auth.currentUser.displayName;
+    this.personsname = this.authfire.auth.currentUser.displayName;
   }
 
 }
