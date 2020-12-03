@@ -1,33 +1,40 @@
-header{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
-  padding: 1rem 0;
+mat-card-content{
+    padding-bottom: 50px;
 }
-header h1{
-  font-size: 2rem;
-  font-weight: bold;
-}
-h2{
+mat-card > mat-card-title{
     text-align: center;
-    font-size: 2rem;
-    margin: 20px 0;
+    margin: 30px 0;
 }
 
-.container{
-    display: flex;
-    flex-direction: column;
+mat-card-content mat-card{
+    display: grid;
+    grid-template-areas:
+            "hl icon"
+            "desc icon";
 }
-.container .card{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.container .card p{
-    font-size: 1.5rem;
+mat-card-content mat-card h3{
+    grid-area: hl;
+    font-weight: bold;
 }
 
+mat-card-content mat-card p {
+    grid-area: desc;
+}
+
+mat-card-content mat-card fa-icon{
+    grid-area: icon;
+}
+
+@media screen and (min-width: 800px){
+    mat-card-content{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+
+    }
+
+    mat-card-content mat-card{
+        width: 30%;
+        margin: 0;
+    }
+}
