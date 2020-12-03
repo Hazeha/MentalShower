@@ -9,16 +9,13 @@
     padding: 1rem 0;
 }
 .container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
     margin: 20px 0;
     padding: 1rem 0;
 }
-.example-card{
-    width: 400px;
-}
+/*.example-card{*/
+/*    width: 400px;*/
+/*}*/
 .user-button{
     margin-left: 110px;
     background-color: #3f51b5;
