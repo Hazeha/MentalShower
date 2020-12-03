@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PasswordValidator } from '../passwordValidator';
-import { LoginService } from '../shared/user.service';
+import { LoginService } from '../_services/user.service';
 import md5 from 'md5';
 
 @Component({
