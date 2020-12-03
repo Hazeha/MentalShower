@@ -13,3 +13,21 @@ a {
     text-decoration: none;
     color: white;
 }
+
+
+
+@media screen and (min-width: 800px) {
+    section{
+        display: flex;
+        justify-content: space-between;
+        background-color: #3f51b5 ;
+        padding: 5px 0;
+    }
+    app-nav{
+        position: unset;
+        bottom: unset;
+        left: unset;
+        right: unset;
+    }
+
+}
