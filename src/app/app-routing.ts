@@ -14,6 +14,7 @@ import {FanSettingComponent} from './fan-setting/fan-setting.component';
 
 
 export const routing = RouterModule.forRoot([
+    
     { path: '', component: IndexComponent },
     { path: 'index', component: IndexComponent },
     { path: 'cp', component: ControlpanelComponent },

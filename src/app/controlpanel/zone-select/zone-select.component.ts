@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import {CheckInService} from '../../_services/check-in.service';
-
+import { CheckInService } from '../../_services/check-in.service';
+import { InMemoryService } from '../../_services/in-memory.service';
 @Component({
   selector: 'app-zone-select',
   templateUrl: './zone-select.component.html',
@@ -19,20 +19,20 @@ export class ZoneSelectComponent implements OnInit {
   currentRoom: any;
   currentZoneId: any;
   chairs = [
-    {id: 1, taken: true},
-    {id: 2, taken: true},
-    {id: 3, taken: false},
-    {id: 4, taken: false},
-    {id: 5, taken: false},
-    {id: 6, taken: false}
+    { id: 1, taken: true },
+    { id: 2, taken: true },
+    { id: 3, taken: false },
+    { id: 4, taken: false },
+    { id: 5, taken: false },
+    { id: 6, taken: false }
   ];
-  constructor(private checkIn: CheckInService) { }
+  constructor(private checkIn: CheckInService, private inmemory: InMemoryService) { }
 
   ngOnInit(): void {
     this.getRooms();
   }
   /** Methods */
-  getRooms(){
+  getRooms() {
     this.checkIn.getRooms()
       .subscribe(
         data => {
@@ -44,6 +44,7 @@ export class ZoneSelectComponent implements OnInit {
   }
   setRoom(id) {
     this.currentRoom = id;
+    this.inmemory.room = id;
     console.log(this.currentRoom, 'set as current room');
     this.getZones();
   }
@@ -57,13 +58,14 @@ export class ZoneSelectComponent implements OnInit {
         error => {
         });
   }
-  setLocalZone(i){
+  setLocalZone(i) {
     this.currentZoneId = i;
     console.log(this.currentZoneId, 'set as local current Zone');
 
   }
   setZone(id, localId) {
     this.currentZone = id;
+    this.inmemory.zone = id;
     this.currentZoneId = localId;
     this.position.currentRoom = this.currentRoom;
     this.position.currentZone = (localId + 1);

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faFan, faGraduationCap, faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
-import { LoginService } from '../shared/user.service';
+import { LoginService } from '../_services/user.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
@@ -16,7 +16,7 @@ export class IndexComponent implements OnInit {
   constructor(private loginuser: LoginService, private authfire: AngularFireAuth) { }
 
   ngOnInit() {
-    this.personsname = this.authfire.auth.currentUser.displayName;
+//    this.personsname = this.authfire.auth.currentUser.displayName;
   }
 
 }
