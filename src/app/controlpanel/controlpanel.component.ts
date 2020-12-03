@@ -13,8 +13,8 @@ export class ControlpanelComponent implements OnInit {
 
   /** Properties */
   currentPosition = {
-    currentZone: 1,
-    currentRoom: 2
+    currentZone: null,
+    currentRoom: null
   };
 
   /** Constructor */

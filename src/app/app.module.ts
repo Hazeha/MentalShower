@@ -29,6 +29,7 @@ import { ZoneSelectComponent } from './controlpanel/zone-select/zone-select.comp
 import { QrComponent } from './controlpanel/qr/qr.component';
 
 import { SignupComponent } from './signup/signup.component';
+import { QrResultComponent } from './controlpanel/qr/qr-result/qr-result.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +49,7 @@ import { SignupComponent } from './signup/signup.component';
     LoginComponent,
     SignupComponent,
     MyProfileComponent,
+    QrResultComponent,
   ],
   imports: [
     BrowserModule,
