@@ -3,7 +3,6 @@ header{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 20px 0;
   padding: 1rem 0;
 }
 header h1{

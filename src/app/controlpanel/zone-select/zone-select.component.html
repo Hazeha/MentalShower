@@ -20,7 +20,7 @@
           value="{{room.room_ID}}"
           (onSelectionChange)="setRoom(room.room_ID)"
         >
-          {{room.room_ID}}
+          {{room.room_ID}} - {{room.name}}
         </mat-option>
       </mat-select>
     </mat-form-field>
@@ -45,6 +45,7 @@
            *ngFor="let zone of zones index as i;"
            (click)="setZone(zone.climate_zone_ID, i)"
       >
+<!--        <p>Current Air Flow : 100</p>-->
         <mat-icon
           *ngFor="let chair of chairs;"
           [ngStyle]="{'color':chair.taken !== false ? 'red' : 'green'}"

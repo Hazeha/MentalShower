@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CheckInService } from '../../_services/check-in.service';
 import { InMemoryService } from '../../_services/in-memory.service';
+import {PresetService} from '../../_services/preset.service';
 @Component({
   selector: 'app-zone-select',
   templateUrl: './zone-select.component.html',
@@ -18,15 +19,12 @@ export class ZoneSelectComponent implements OnInit {
   currentZone: any;
   currentRoom: any;
   currentZoneId: any;
-  chairs = [
-    { id: 1, taken: true },
-    { id: 2, taken: true },
-    { id: 3, taken: false },
-    { id: 4, taken: false },
-    { id: 5, taken: false },
-    { id: 6, taken: false }
-  ];
-  constructor(private checkIn: CheckInService, private inmemory: InMemoryService) { }
+  chairs: any;
+  constructor(
+    private checkIn: CheckInService,
+    private presetService: PresetService,
+    private inmemory: InMemoryService
+  ) { }
 
   ngOnInit(): void {
     this.getRooms();
@@ -57,6 +55,16 @@ export class ZoneSelectComponent implements OnInit {
         },
         error => {
         });
+      this.getSeats(1);
+  }
+  getSeats(zone) {
+    this.checkIn.getSeats(zone).subscribe(data => {
+      this.chairs = data;
+      console.log(this.chairs);
+    },
+      error => {
+      console.log('fail at getSeat');
+      });
   }
   setLocalZone(i) {
     this.currentZoneId = i;
@@ -71,5 +79,16 @@ export class ZoneSelectComponent implements OnInit {
     this.position.currentZone = (localId + 1);
     console.log(this.currentZone, 'set as current Zone');
     this.positionChange.emit(this.position);
+
+    this.updatePreset(1, this.currentZone, 3, 12);
+  }
+
+  updatePreset(presetID, climateID, userID, airflowID){
+    const data = {
+      FK_Climate_Zone: climateID,
+      FK_User: userID,
+      airflow: airflowID
+    };
+    this.presetService.putPresets(presetID, data).subscribe(response => { console.log(data); });
   }
 }
