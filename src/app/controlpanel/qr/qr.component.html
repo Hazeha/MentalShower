@@ -11,5 +11,15 @@
     </mat-panel-description>
   </mat-expansion-panel-header>
     <p>Qr Scanner</p>
-    <zxing-scanner></zxing-scanner>
+  <zxing-scanner
+    [torch]="torchEnabled"
+    [device]="deviceCurrent"
+    (deviceChange)="onDeviceChange($event)"
+    (scanSuccess)="onCodeResult($event)"
+    [formats]="formatsEnabled"
+    [tryHarder]="tryHarder"
+    (permissionResponse)="onHasPermission($event)"
+    (camerasFound)="onCamerasFound($event)"
+    (torchCompatible)="onTorchCompatible($event)">
+  </zxing-scanner>
 </mat-expansion-panel>
