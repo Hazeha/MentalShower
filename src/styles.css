@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-image: url("app/_styles/pngwing.png"); background-size: cover;background-repeat: no-repeat; }
 
 
 button{
@@ -18,8 +18,7 @@ button{
     justify-content: space-between;
 }
 
-.header{
-    background-color: #f9f9f9;
+header{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,7 +26,7 @@ button{
     margin: 20px 0;
     padding: 1rem 0;
 }
-.header h1{
+header h1{
     font-size: 2rem;
     font-weight: bold;
 }

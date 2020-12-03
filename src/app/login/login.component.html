@@ -1,4 +1,8 @@
-<mat-card id="logincard">
+<header>
+  <h1>Login</h1>
+  <p>Some Text</p>
+</header>
+<mat-card>
     <mat-card-title id="userinfo">
         Login
     </mat-card-title>
@@ -9,7 +13,7 @@
                     <input type="text" matInput placeholder="Username" formControlName="username">
                 </mat-form-field>
             </p>
-            <div *ngIf="form.controls.username.touched 
+            <div *ngIf="form.controls.username.touched
 		&& !form.controls.username.valid" class="mat-alert-danger">
                 Username is required
             </div>
@@ -32,8 +36,8 @@
                 </div>
             </div>
             <div *ngIf ="invalidLoginMessage" class="mat-alert-danger">
-                {{invalidLoginMessage}}  
-                </div>  
+                {{invalidLoginMessage}}
+                </div>
         </div>
     <div class="user-button">
       <button class="user-button" type="submit" mat-button>Login</button>

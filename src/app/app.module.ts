@@ -12,9 +12,9 @@ import { routing } from './app-routing';
 import { AppComponent } from './app.component';
 import { ControlpanelComponent } from './controlpanel/controlpanel.component';
 import { DialogComponent } from './dialog/dialog.component';
-import { FanAdvancedComponent } from './fan-advanced/fan-advanced.component';
-import { FanBasicComponent } from './fan-basic/fan-basic.component';
-import { FanContainerComponent } from './fan-container/fan-container.component';
+import { FanAdvancedComponent } from './fan-setting/fan-advanced/fan-advanced.component';
+import { FanBasicComponent } from './fan-setting/fan-basic/fan-basic.component';
+import { FanContainerComponent } from './fan-setting/fan-container/fan-container.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
@@ -30,6 +30,7 @@ import { QrComponent } from './controlpanel/qr/qr.component';
 
 import { SignupComponent } from './signup/signup.component';
 import { QrResultComponent } from './controlpanel/qr/qr-result/qr-result.component';
+import { FanSettingComponent } from './fan-setting/fan-setting.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +51,7 @@ import { QrResultComponent } from './controlpanel/qr/qr-result/qr-result.compone
     SignupComponent,
     MyProfileComponent,
     QrResultComponent,
+    FanSettingComponent,
   ],
   imports: [
     BrowserModule,
