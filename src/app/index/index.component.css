@@ -25,6 +25,7 @@
 .card h2{
     font-size: 2rem;
     text-decoration: none;
+    cursor: pointer;
 }
 .card .arrow{
     font-size: 2rem;
