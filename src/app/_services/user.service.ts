@@ -22,7 +22,8 @@ export class LoginService {
             return this.afAuth.auth.signInWithEmailAndPassword(username, password).then(authState => {
                 this.loggedIn.next(true);
                 console.log(authState);
-                this.router.navigate(['advancesetting']);
+                console.log(authState.user.uid);
+                this.router.navigate(['profile']);
             })
                 .catch(
                     error => {
@@ -38,7 +39,7 @@ export class LoginService {
         this.router.navigate(['']);
     }
     signup(username: string, email: string, password: string, photoUrl: string) {
-        console.log('from service', photoUrl)
+        console.log('from service', photoUrl);
         return this.afAuth.auth.createUserWithEmailAndPassword(email, password).then(
             authState => {
                 authState.user.updateProfile({
@@ -47,7 +48,7 @@ export class LoginService {
                 });
                 console.log('signup-then', authState);
                 this.loggedIn.next(true);
-                this.router.navigate(['advancesetting']);
+                this.router.navigate(['profile']);
             }
         )
             .catch(

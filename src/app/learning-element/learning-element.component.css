@@ -19,6 +19,10 @@ header h1{
   font-size: 2rem;
   font-weight: bold;
 }
+header p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
   .container-right{
     flex: 20%;
     margin: 10px;
@@ -90,10 +94,7 @@ h2{
   border-radius: 4px;
   text-align: center;
 }
-h1{
-    text-align: center;
-    margin-top: 25px;
-}
+
 
 p{
  margin-top: 50px;

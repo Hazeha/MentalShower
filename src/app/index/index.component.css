@@ -1,14 +1,28 @@
-.header{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-    padding: 1rem 0;
+header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  padding: 1rem 0;
 }
-.header h1{
-    font-size: 2rem;
-    font-weight: bold;
+header h1{
+  font-size: 2rem;
+  font-weight: bold;
+}
+.indexContainer{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+mat-card{
+  width: 45%;
+  height: 100px;
+  margin-bottom: 35px;
+}
+.arrow{
+  font-size: 2rem;
+  float: right;
 }
 
 .card{
@@ -30,11 +44,9 @@
     font-size: 2rem;
 }
 .watermarkIcon{
-    position: absolute;
-    font-size: 10rem;
-    top: 50%;
+    position: sticky;
+    font-size: 3rem;
     transform: translateY(-50%) translateX(-50%);
-    left: 50%;
     opacity: 10%;
 }
 

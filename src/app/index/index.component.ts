@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { faFan, faGraduationCap, faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
+import {
+  faFan,
+  faGraduationCap,
+  faArrowAltCircleRight,
+  faChair,
+  faUser,
+  faCalendarAlt,
+  faAddressCard
+} from '@fortawesome/free-solid-svg-icons';
 import { LoginService } from '../_services/user.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 
@@ -10,9 +18,14 @@ import { AngularFireAuth } from '@angular/fire/auth';
 })
 export class IndexComponent implements OnInit {
   fan = faFan;
+  chair = faChair;
   cap = faGraduationCap;
   arrow = faArrowAltCircleRight;
-  personsname = 'Guest';
+  user = faUser;
+  calender = faCalendarAlt;
+  contact = faAddressCard;
+
+  userName = 'Guest12314';
   constructor(private loginuser: LoginService, private authfire: AngularFireAuth) { }
 
   ngOnInit() {

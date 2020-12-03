@@ -14,10 +14,15 @@ import {FanSettingComponent} from './fan-setting/fan-setting.component';
 
 
 export const routing = RouterModule.forRoot([
-    
     { path: '', component: IndexComponent },
     { path: 'index', component: IndexComponent },
     { path: 'cp', component: ControlpanelComponent },
+    // TODO This needs to be changed
+    { path: 'cp/fanSetting', component: FanSettingComponent, children: [
+      {path: '', component: FanBasicComponent},
+        {path: 'basic', component: FanBasicComponent},
+      {path: 'advanced', component: FanAdvancedComponent}
+    ]},
     { path: 'login', component: LoginComponent },
     { path: 'profile', component: MyProfileComponent },
     { path: 'login/:invalidLoginMessage', component: LoginComponent },
@@ -26,12 +31,6 @@ export const routing = RouterModule.forRoot([
     { path: 'cp/fan', component: FanContainerComponent },
     { path: 'learningelement', component: LearningElementComponent },
     { path: '**', component: PageNotFoundComponent },
-
-    { path: 'fanSetting', component: FanSettingComponent, children: [
-      {path: 'basic', component: FanBasicComponent},
-      {path: 'advanced', component: FanAdvancedComponent}
-    ]}
-
 ]);
 
 

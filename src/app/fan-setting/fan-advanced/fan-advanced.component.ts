@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faFan } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
-import { InMemoryService } from '../_services/in-memory.service';
+import { InMemoryService } from '../../_services/in-memory.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 @Component({
   selector: 'app-fan-advanced',

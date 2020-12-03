@@ -1,17 +1,36 @@
-<div class="header">
+<header>
     <h1>Welcome</h1>
-    <h2>{{personsname}}</h2>
-</div>
+    <h2>{{userName}}</h2>
+</header>
 <section class="indexContainer">
-    <a routerLink="cp"><mat-card class="card">
-        <fa-icon [icon]="fan" class="watermarkIcon"></fa-icon>
-        <h2>Control Panel</h2>
-        <fa-icon [icon]="arrow" class="arrow"></fa-icon>
-    </mat-card></a>
-
-    <a routerLink="learningelement"><mat-card class="card">
-        <fa-icon [icon]="cap" class="watermarkIcon"></fa-icon>
-        <h2>Learning</h2>
-        <fa-icon [icon]="arrow" class="arrow"></fa-icon>
-    </mat-card></a>
+  <mat-card routerLink="cp">
+    <mat-card-title>Check In</mat-card-title>
+    <fa-icon [icon]="chair" class="watermarkIcon"></fa-icon>
+    <fa-icon [icon]="arrow" class="arrow"></fa-icon>
+  </mat-card>
+  <mat-card routerLink="cp/fanSetting">
+    <mat-card-title>Temperature</mat-card-title>
+    <fa-icon [icon]="fan" class="watermarkIcon"></fa-icon>
+    <fa-icon [icon]="arrow" class="arrow"></fa-icon>
+  </mat-card>
+  <mat-card routerLink="learningelement">
+    <mat-card-title>Learning</mat-card-title>
+    <fa-icon [icon]="cap" class="watermarkIcon"></fa-icon>
+    <fa-icon [icon]="arrow" class="arrow"></fa-icon>
+  </mat-card>
+  <mat-card routerLink="profile">
+    <mat-card-title>Profile</mat-card-title>
+    <fa-icon [icon]="user" class="watermarkIcon"></fa-icon>
+    <fa-icon [icon]="arrow" class="arrow"></fa-icon>
+  </mat-card>
+<!--  <mat-card routerLink="**" disabled>-->
+<!--    <mat-card-title>Schedule</mat-card-title>-->
+<!--    <fa-icon [icon]="calender" class="watermarkIcon"></fa-icon>-->
+<!--    <fa-icon [icon]="arrow" class="arrow"></fa-icon>-->
+<!--  </mat-card>-->
+<!--  <mat-card routerLink="**" disabled>-->
+<!--    <mat-card-title>Contact</mat-card-title>-->
+<!--    <fa-icon [icon]="contact" class="watermarkIcon"></fa-icon>-->
+<!--    <fa-icon [icon]="arrow" class="arrow"></fa-icon>-->
+<!--  </mat-card>-->
 </section>

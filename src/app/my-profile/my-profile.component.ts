@@ -31,6 +31,7 @@ export class MyProfileComponent implements OnInit {
   ngOnInit(): void {
     const id = this.authfire.auth.currentUser.uid;
     this.PresetsByUid(id);
+    console.log(this.userData);
   }
   logout() {
     const result = this.userout.logout();
